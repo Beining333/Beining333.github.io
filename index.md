@@ -27,7 +27,9 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ```Python
 // Python code with syntax highlighting.
-
+import os
+path = '/content/drive/MyDrive/'
+files = os.listdir(path)
 }
 ```
 
