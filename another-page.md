@@ -36,6 +36,13 @@ files = os.listdir(path)
 loan_data = pd.read_csv('/content/drive/MyDrive/loan_data.xls')
 loan_data.head()
 ```
+|index|credit\.policy|purpose|int\.rate|installment|log\.annual\.inc|dti|fico|days\.with\.cr\.line|revol\.bal|revol\.util|inq\.last\.6mths|delinq\.2yrs|pub\.rec|not\.fully\.paid|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|0|1|debt\_consolidation|0\.1189|829\.1|11\.35040654|19\.48|737|5639\.958333|28854|52\.1|0|0|0|0|
+|1|1|credit\_card|0\.1071|228\.22|11\.08214255|14\.29|707|2760\.0|33623|76\.7|0|0|0|0|
+|2|1|debt\_consolidation|0\.1357|366\.86|10\.37349118|11\.63|682|4710\.0|3511|25\.6|1|0|0|0|
+|3|1|debt\_consolidation|0\.1008|162\.34|11\.35040654|8\.1|712|2699\.958333|33667|73\.2|1|0|0|0|
+|4|1|credit\_card|0\.1426|102\.92|11\.29973224|14\.97|667|4066\.0|4740|39\.5|0|1|0|0|
 
 
 
