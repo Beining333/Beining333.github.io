@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AI Agent
+title: CPA
 description: This is just another page
 ---
 
