@@ -4,9 +4,9 @@ layout: default
 
 欢迎来我的主页。
 
-[风控](./another-page.html).
+[风控策略](./another-page.html).
 
-[CPA](./CPA.html).
+[AI Agent](./CPA.html).
 
 # Header 1
 
