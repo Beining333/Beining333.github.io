@@ -11,9 +11,10 @@ description: 风控策略学习
 单维度策略开发分为策略测算与泛化，策略测算包括变量EDA、变量最优分箱、规则测算效果分析，策略泛化包括规则泛化、待上线规则集合并泛化等步骤，主要是对单个变量进行分析和挖掘。策略测算是在Train Set上分析策略效果， 策略泛化是在Validation Set上分析策略效果。
 
 1. 变量描述性统计分析
-在此参考Kaggle文章进行Loan EDA，包括数据清洗与描述性统计。
+
+> 在此参考Kaggle文章(Loan EDA)，包括数据清洗与描述性统计。
 ```
-[https://www.kaggle.com/code/matinmahmoudi/loan-eda-project-quick-start-for-beginners/input]
+https://www.kaggle.com/code/matinmahmoudi/loan-eda-project-quick-start-for-beginners/input
 ```
 ```Python
 #导入必要的库
@@ -33,8 +34,11 @@ path = '/content/drive/MyDrive/'
 files = os.listdir(path)
 for file in files:
     print(file)
-df = pd.read_csv('/content/drive/MyDrive/loan_data.xls')
-df
+loan_data = pd.read_csv('/content/drive/MyDrive/loan_data.xls')
+loan_data.head()
 ```
+
+
+
 
 [back](./)
