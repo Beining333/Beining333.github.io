@@ -5,6 +5,7 @@ layout: default
 欢迎来我的主页。
 
 [风控](./another-page.html).
+[CPA](./CPA.html).
 
 # Header 1
 
