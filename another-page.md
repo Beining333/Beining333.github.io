@@ -32,8 +32,7 @@ drive.mount('/content/drive')
 import os
 path = '/content/drive/MyDrive/'
 files = os.listdir(path)
-for file in files:
-    print(file)
+
 loan_data = pd.read_csv('/content/drive/MyDrive/loan_data.xls')
 loan_data.head()
 ```
