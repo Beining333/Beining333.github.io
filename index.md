@@ -4,11 +4,12 @@ layout: default
 
 欢迎来我的主页。
 
-[风控策略](./another-page.html).
+[风控策略](./another-page.html)
 
-[AI Agent](./CPA.html).
+[AI Agent](./AI Agent.html)
 
-[深度学习](./deeplearning.html).
+[深度学习](./deeplearning.html)
+
 
 # Header 1
 
