@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Another page
+title: 风控
 description: This is just another page
 ---
 
