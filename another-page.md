@@ -79,6 +79,37 @@ Data columns (total 14 columns):
 dtypes: float64(6), int64(7), object(1)
 memory usage: 1.0+ MB
 
+```python
+non_boolean_numerical_features = ['int.rate', 'installment', 'log.annual.inc', 'dti', 'fico', 'days.with.cr.line', 'revol.bal', 'revol.util', 'inq.last.6mths',  'delinq.2yrs', 'pub.rec']
+boolean_numeric_features = ['credit.policy', 'not.fully.paid']
+
+# Visualize the distributions and box plots for numerical features, including log-transformed versions for skewed data
+for column in non_boolean_numerical_features:
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 4))
+
+    # Histogram for the distribution
+    sns.histplot(loan_data[column], kde=False, color='skyblue', ax=ax1)
+    ax1.set_title(f'Distribution of {column}')
+    ax1.set_ylabel('Frequency')
+
+    # Boxplot for the variable
+    sns.boxplot(x=loan_data[column], color='lightgreen', ax=ax2)
+    ax2.set_title(f'Boxplot of {column}')
+
+    # Log transformation and plot if the data is skewed
+    if loan_data[column].skew() > 1:
+        loan_data[column+'_log'] = np.log1p(loan_data[column])
+        sns.histplot(loan_data[column+'_log'], kde=False, color='orange', ax=ax3)
+        ax3.set_title(f'Log-transformed Distribution of {column}')
+    else:
+        ax3.set_title(f'Log-transformed plot not necessary for {column}')
+        ax3.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+```
+
+![Individual Feature Review](/assets/Risk_pic_2.png)
 
 
 
