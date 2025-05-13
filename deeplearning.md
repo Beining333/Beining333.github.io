@@ -10,7 +10,7 @@ description: 深度学习基础知识
 CNN的基础是Layers/Modules/Parameters/Padding/Stride/Input Channels/Output Channels/Pooling，及平移不变性和局部性这两大CNN基本性质，模型有LeNet/，应用之一为Computer Vision。
 RNN的基础是Markov models/Language models/Hidden state/Perplexity/Attention mechanisms/Encoder-decoder等，模型有LSTM/GRU/Bidirection RNN等，应用之一为NLP。
 
-## LEDetection: A Simple Framework for Semi-Supervised Few-Shot Object Detection
+### LEDetection: A Simple Framework for Semi-Supervised Few-Shot Object Detection
 > 论文： https://arxiv.org/abs/2303.05739
 
 ![框架](/assets/DL_pic_1.png)
