@@ -51,7 +51,7 @@ numerical_summary = loan_data.describe().transpose()
 palette = sns.color_palette("Pastel2", as_cmap=True)
 numerical_summary.style.background_gradient(cmap=palette)
 ```
-
+![output](https://github.com/Beining333/Beining333.github.io/blob/master/assets/%E9%A3%8E%E6%8E%A7pic_1.png)
 
 
 [back](./)
