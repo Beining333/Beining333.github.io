@@ -83,30 +83,47 @@ memory usage: 1.0+ MB
 non_boolean_numerical_features = ['int.rate', 'installment', 'log.annual.inc', 'dti', 'fico', 'days.with.cr.line', 'revol.bal', 'revol.util', 'inq.last.6mths',  'delinq.2yrs', 'pub.rec']
 boolean_numeric_features = ['credit.policy', 'not.fully.paid']
 
-# Visualize the distributions and box plots for numerical features, including log-transformed versions for skewed data
-for column in non_boolean_numerical_features:
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 4))
+num_features = len(non_boolean_numerical_features)
+nrows = num_features
+ncols = 3  
 
-    # Histogram for the distribution
+fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(10, 2 * num_features))
+
+for row_idx, column in enumerate(non_boolean_numerical_features):
+    # 获取当前行的3个子图坐标
+    ax1, ax2, ax3 = axes[row_idx, 0], axes[row_idx, 1], axes[row_idx, 2]
+    
+    # ----------------------------
+    # 子图1：原始数据分布直方图
+    # ----------------------------
     sns.histplot(loan_data[column], kde=False, color='skyblue', ax=ax1)
-    ax1.set_title(f'Distribution of {column}')
-    ax1.set_ylabel('Frequency')
-
-    # Boxplot for the variable
+    ax1.set_title(f'Distribution of {column}', fontsize=10)
+    ax1.set_ylabel('Frequency', fontsize=8)
+    
+    # ----------------------------
+    # 子图2：箱线图
+    # ----------------------------
     sns.boxplot(x=loan_data[column], color='lightgreen', ax=ax2)
-    ax2.set_title(f'Boxplot of {column}')
-
-    # Log transformation and plot if the data is skewed
+    ax2.set_title(f'Boxplot of {column}', fontsize=10)
+    
+    # ----------------------------
+    # 子图3：对数转换后的直方图（仅当数据偏态时）
+    # ----------------------------
     if loan_data[column].skew() > 1:
-        loan_data[column+'_log'] = np.log1p(loan_data[column])
-        sns.histplot(loan_data[column+'_log'], kde=False, color='orange', ax=ax3)
-        ax3.set_title(f'Log-transformed Distribution of {column}')
+        log_column = column + '_log'
+        loan_data[log_column] = np.log1p(loan_data[column])
+        sns.histplot(loan_data[log_column], kde=False, color='orange', ax=ax3)
+        ax3.set_title(f'Log-transformed {column}', fontsize=10)
     else:
-        ax3.set_title(f'Log-transformed plot not necessary for {column}')
+        ax3.text(0.5, 0.5, 
+                f'Skewness = {loan_data[column].skew():.2f}\nNo log-transform needed',
+                ha='center', va='center', 
+                fontsize=8, color='gray')
         ax3.axis('off')
 
-    plt.tight_layout()
-    plt.show()
+# 调整整体布局并显示
+plt.tight_layout()
+plt.show()
 ```
 
 ![Individual Feature Review](/assets/Risk_pic_2.png)
