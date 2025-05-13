@@ -56,9 +56,10 @@ numerical_summary.style.background_gradient(cmap=palette)
 ```python
 loan_data.info()
 ```
-> <class 'pandas.core.frame.DataFrame'>
-> RangeIndex: 9578 entries, 0 to 9577
-> Data columns (total 14 columns):
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 9578 entries, 0 to 9577
+Data columns (total 14 columns):
+
 |index|Column|Non-Null Count|Dtype  
 |:---|:---|:---|:----  
 |0|credit.policy|9578 non-null|int64| 
@@ -75,8 +76,8 @@ loan_data.info()
 |11|delinq.2yrs|9578 non-null|int64|
 |12|pub.rec|9578 non-null|int64|  
 |13|not.fully.paid|9578 non-null|int64|
-> dtypes: float64(6), int64(7), object(1)
-> memory usage: 1.0+ MB
+dtypes: float64(6), int64(7), object(1)
+memory usage: 1.0+ MB
 
 
 
