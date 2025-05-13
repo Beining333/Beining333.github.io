@@ -6,7 +6,7 @@ layout: default
 
 [风控策略](./RiskMng.html)
 
-[AI Agent](./AI.html)
+[AI Agent](./CPA.html)
 
 [深度学习](./deeplearning.html)
 
