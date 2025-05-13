@@ -60,8 +60,8 @@ loan_data.info()
 RangeIndex: 9578 entries, 0 to 9577
 Data columns (total 14 columns):
 
-|index|Column|Non-Null Count|Dtype  
-|:---|:---|:---|:----  
+|index|Column|Non-Null Count|Dtype|  
+|:---|:---|:---|:----|  
 |0|credit.policy|9578 non-null|int64| 
 |1|purpose|9578 non-null|object|
 |2|int.rate|9578 non-null|float64|
@@ -110,7 +110,6 @@ for column in non_boolean_numerical_features:
 ```
 
 ![Individual Feature Review](/assets/Risk_pic_2.png)
-
 
 
 [back](./)
