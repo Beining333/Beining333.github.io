@@ -13,6 +13,6 @@ RNN的基础是Markov models/Language models/Hidden state/Perplexity/Attention m
 ## LEDetection: A Simple Framework for Semi-Supervised Few-Shot Object Detection
 > 论文： https://arxiv.org/abs/2303.05739
 
-![框架](/assets/DL_pic_1.jpg)
+![框架](/assets/DL_pic_1.png)
 
 [back](./)
