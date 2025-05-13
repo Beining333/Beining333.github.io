@@ -2,7 +2,7 @@
 layout: default
 ---
 
-欢迎来我的主页。
+菜得明明白白。
 
 [风控策略](./another-page.html)
 
