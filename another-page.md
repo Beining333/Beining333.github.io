@@ -109,8 +109,8 @@ plt.show()
 # correlation matrix for non-boolean numerical features
 corr_matrix = loan_data[non_boolean_numerical_features].corr()
 
-plt.figure(figsize=(12, 10))
-cmap = sns.diverging_palette(230, 20, as_cmap=True)
+plt.figure(figsize=(8, 6))
+cmap = sns.diverging_palette(240, 150, as_cmap=True)
 sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap=cmap, center=0,
             square=True, linewidths=.5, cbar_kws={"shrink": .5})
 
