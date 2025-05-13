@@ -17,7 +17,7 @@ description: 风控策略学习
 https://www.kaggle.com/code/matinmahmoudi/loan-eda-project-quick-start-for-beginners/input
 ```
 
-```
+```python
 #导入必要的库
 import pandas as pd
 import numpy as np
@@ -27,7 +27,7 @@ import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 ```
 
-```
+```python
 #这里使用google drive
 from google.colab import drive
 drive.mount('/content/drive')
@@ -46,12 +46,12 @@ loan_data.head()
 |3|1|debt\_consolidation|0\.1008|162\.34|11\.35040654|8\.1|712|2699\.958333|33667|73\.2|1|0|0|0|
 |4|1|credit\_card|0\.1426|102\.92|11\.29973224|14\.97|667|4066\.0|4740|39\.5|0|1|0|0|
 
-```
+```python
 numerical_summary = loan_data.describe().transpose()
 palette = sns.color_palette("Pastel2", as_cmap=True)
 numerical_summary.style.background_gradient(cmap=palette)
 ```
-![output](https://github.com/Beining333/Beining333.github.io/blob/master/assets/%E9%A3%8E%E6%8E%A7pic_1.png)
+![Statistical Summary](https://github.com/Beining333/Beining333.github.io/blob/master/assets/%E9%A3%8E%E6%8E%A7pic_1.png)
 
 
 [back](./)
