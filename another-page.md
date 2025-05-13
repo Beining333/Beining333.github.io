@@ -54,6 +54,16 @@ numerical_summary.style.background_gradient(cmap=palette)
 ![Statistical Summary](/assets/Risk_pic_1.png)
 
 ```python
+# 缺失值
+missing_data = loan_data.isnull().sum()
+
+missing_data = missing_data[missing_data > 0]
+missing_data
+```
+> 0
+> dtype: int64
+
+```python
 non_boolean_numerical_features = ['int.rate', 'installment', 'log.annual.inc', 'dti', 'fico', 'days.with.cr.line', 'revol.bal', 'revol.util', 'inq.last.6mths',  'delinq.2yrs', 'pub.rec']
 boolean_numeric_features = ['credit.policy', 'not.fully.paid']
 
@@ -67,22 +77,16 @@ for row_idx, column in enumerate(non_boolean_numerical_features):
     # 获取当前行的3个子图坐标
     ax1, ax2, ax3 = axes[row_idx, 0], axes[row_idx, 1], axes[row_idx, 2]
     
-    # ----------------------------
     # 子图1：原始数据分布直方图
-    # ----------------------------
     sns.histplot(loan_data[column], kde=False, color='skyblue', ax=ax1)
     ax1.set_title(f'Distribution of {column}', fontsize=10)
     ax1.set_ylabel('Frequency', fontsize=8)
     
-    # ----------------------------
     # 子图2：箱线图
-    # ----------------------------
     sns.boxplot(x=loan_data[column], color='lightgreen', ax=ax2)
     ax2.set_title(f'Boxplot of {column}', fontsize=10)
     
-    # ----------------------------
     # 子图3：对数转换后的直方图（仅当数据偏态时）
-    # ----------------------------
     if loan_data[column].skew() > 1:
         log_column = column + '_log'
         loan_data[log_column] = np.log1p(loan_data[column])
@@ -95,12 +99,24 @@ for row_idx, column in enumerate(non_boolean_numerical_features):
                 fontsize=8, color='gray')
         ax3.axis('off')
 
-# 调整整体布局并显示
 plt.tight_layout()
 plt.show()
 ```
 
 ![Individual Feature Review](/assets/Risk_pic_2.png)
 
+```python
+# correlation matrix for non-boolean numerical features
+corr_matrix = loan_data[non_boolean_numerical_features].corr()
+
+plt.figure(figsize=(12, 10))
+cmap = sns.diverging_palette(230, 20, as_cmap=True)
+sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap=cmap, center=0,
+            square=True, linewidths=.5, cbar_kws={"shrink": .5})
+
+plt.title('Correlation Matrix for Non-Boolean Numerical Features', fontsize=16)
+plt.show()
+```
+![Correlation Matrix](/assets/Risk_pic_3.png)
 
 [back](./)
